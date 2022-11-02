@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+:root {
+
+    /* colors n tingz */
+    --color-1: #3a4660;
+    --color-2: #c9af98;
+    --color-3: #ed8a63;
+    --color-4: #845007;
+    --color-5: #a39274;
+    --color-body: #000;
+    --color-heading: (var(--color-1));
+    --color-subheading: (var(--color-5));
+
+
+    /* font size n tingz */
+    --ff-1: "inter", sans-serif;
+    --fw-reg: 400;
+    --fw-semi: 500;
+    --fw-bold: 700;
+
+    --fs-300: 0.8125rem;
+    --fs-400: 0.875rem;
+    --fs-500: 0.9375rem;
+    --fs-600: 1rem;
+    --fs-700: 1.875rem;
+    --fs-800: 2.5rem;
+    --fs-900: 3.5rem;
+
+    --fs-body: var(--fs-400);
+    --fs-heading: var(--fs-800);
+    --fs-subheading: var(--fs-700)
+    --fs-button: var(--fs-300);
+    --fs-navbar: var(--fs-500);
+
+
+    /* marginz paddin spacin n tingz */
+    --size-100: 0.25rem;
+    --size-200: 0.5rem;
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.5rem;
+    --size-600: 2rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+    --size-900: 5rem;
+}
+
+
+/* CSS REWSET N TINGZ */
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+    scroll-behavior: auto;
+    }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    }
+}
+
+
+/* main styleing time */
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+    min-height: 200vh;
+    font-family: 'Cabin', Sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
+
+.top-navbar {
+    display: block;
+    height: 100px;
+    width: 100%;
+    background: #3D0E61;
+    margin: 0px;
+    z-index: 9;
+}
+
+.top-navbar .navmenu {
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9;
+}
+
+.top-navbar .navitem {
+    list-style: none;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.top-navbar .navlink {
+    color: #B9FAF8;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.top-navbar .navlink:hover {
+    text-decoration: underline;
+    background-color: var(--color-1);
+    transition: 0.3s ease-in;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+#hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 35px;
+    display: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Cabin' Sans-serif;
+    background: linear-gradient(
+        to bottom,
+        var(--color-1), var(--color-2) 20%,
+        white 20%, white 40%,
+        var(--color-1) 40%, var(--color-2) 60%,
+        white 60%, white 80%,
+        var(--color-1) 80%, var(--color-2) 100%
+    );
+}
+
+#hamburger-menu .side-navbar {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #3D0E61;
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+    color: #B9FAF8;
+    font-size: 2.2rem;
+}
+
+#hamburger-menu #navmenu-side {
+    padding-left: 0px;
+}
+
+#hamburger-menu .navitem {
+    list-style: none;
+    line-height: 3rem;
+}
+
+#hamburger-menu .navlink {
+    color: #B9FAF8;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu .navlink:hover {
+    text-decoration: underline;
+    background-color: var(--color-1);
+    transition: 0.3s ease-in;
+}
+
+#hamburger-input:checked + #hamburger-menu .side-navbar  {
+    visibility: visible;
+    left: 0;
+}
+
+#hamburger-input:checked ~ .overlay {
+    visibility: visible;
+    opacity: 0.4;
+}
+
+
+.submenu {
+    display: none;
+}
+
+#dropdown:hover > .sublink {
+    display: block;
+}
+
+@media screen and (max-width: 750px) {
+    .top-navbar {
+        display: none;
+    }
+
+    #hamburger-menu {
+        display: inline;
+    }
+}
+
